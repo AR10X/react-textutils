@@ -46,7 +46,15 @@ function NavbarHeader(){
                 font-weight: 600;
                 border-radius: 0;
             }
-
+            @media (max-width: 768px) {
+                    
+                    .navbar-custom {
+                        padding-left: 20px;
+                    }
+                    .dark-mode-comp {
+                        margin-right: 30px;
+                    }
+                }
             `}
             </style>
             <Navbar className='navbar-container' >
@@ -54,22 +62,15 @@ function NavbarHeader(){
                     <Navbar.Brand href='/home' className='navbar-custom'>
                         TextUtils
                     </Navbar.Brand>
-                    {/* <Form  className='mx-auto d-flex'>
-                        <FormControl type='text' placeholder='Search' className='form-control' />
-                        <Button variant='outline-light' className='ml-auto btn-form'>Search</Button>
-                    </Form> */}
-                    <Nav className='me-auto'>
-                        <Nav.Item>
-                            <Nav.Link href='/home'>Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href='/about'>About</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href='/contact'>Contact</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-                    <ToggleDarkMode />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className='me-auto'>
+                            <Nav.Link href='#home'>Home</Nav.Link>
+                            <Nav.Link href='#about'>About</Nav.Link>
+                            <Nav.Link href='#contact'>Contact</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                    <ToggleDarkMode className="dark-mode-comp" />
                 </Container>
             </Navbar>
         </>

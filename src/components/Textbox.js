@@ -103,6 +103,15 @@ function Textbox(){
                 font-size: 20px;
                 font-weight: 300;
             }
+            @media (max-width: 768px) {
+                .form-control {
+                    width: 90vw;
+                    margin: 0 auto;
+                }
+                .form-label {
+                    text-align: center;
+                }
+            }
             `}
             </style>
             <h3 className="heading" >

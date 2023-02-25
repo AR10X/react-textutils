@@ -9,7 +9,6 @@ import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 export default function ToggleDarkMode() {
     const [isDarkMode, setDarkMode] = useState(true);
-
     useEffect(()=>{
         const body = document.body.classList;
         const headingStyle = document.getElementsByClassName('heading')[0].style;
@@ -68,13 +67,20 @@ export default function ToggleDarkMode() {
                     border-radius: 30px;
                     font-weight: 600;
                 }
+                @media (max-width: 768px) {
+                    .toggle-text {
+                        display: none;
+                    }
+                }
                 `}
             </style>
             <Button variant="outline-light" onClick={handleDarkMode} className='btn-darkmode'>
                 <FontAwesomeIcon icon= {isDarkMode? faSun: faMoon} />{" "}
-                {
-                    isDarkMode?'Light Mode':'Dark Mode'
-                }
+                <span className="d-none d-md-inline">
+                    {
+                        isDarkMode?'Light Mode':'Dark Mode'
+                    }
+                    </span>
             </Button>
         </>
     )
