@@ -1,8 +1,9 @@
-import React from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import '../App.css';
 import ToggleDarkMode from './ToggleDarkMode';
+
 
 function NavbarHeader(){
     
@@ -22,6 +23,7 @@ function NavbarHeader(){
                 font-size: 30px;
                 font-weight: 600;
                 color: #E7CCB1;
+                padding-right: 10px;
             }
             .nav-link {
                 color: #E7CCB1;
@@ -29,7 +31,7 @@ function NavbarHeader(){
                 font-size: 20px;
             }
             .form-control {
-                width: 45vw;
+                width: 650px;
                 margin-top: auto;
                 border-radius: 20px;
                 background-color: transparent;
@@ -46,6 +48,10 @@ function NavbarHeader(){
                 font-weight: 600;
                 border-radius: 0;
             }
+            .navbar-toggler {
+                color: transparent;
+            }
+
             @media (max-width: 768px) {
                     
                     .navbar-custom {
@@ -54,21 +60,25 @@ function NavbarHeader(){
                     .dark-mode-comp {
                         margin-right: 30px;
                     }
+                    .container, .container-sm {
+                        max-width: 768px;
+                    }
                 }
             `}
             </style>
-            <Navbar className='navbar-container' >
+            <Navbar className='navbar-container' expand='md' >
                 <Container>
-                    <Navbar.Brand href='/home' className='navbar-custom'>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"  />
+                    <Navbar.Brand href='/home' className='mx-auto navbar-custom' >
                         TextUtils
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className='me-auto'>
                             <Nav.Link href='#home'>Home</Nav.Link>
                             <Nav.Link href='#about'>About</Nav.Link>
                             <Nav.Link href='#contact'>Contact</Nav.Link>
                         </Nav>
+                        
                     </Navbar.Collapse>
                     <ToggleDarkMode className="dark-mode-comp" />
                 </Container>

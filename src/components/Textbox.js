@@ -104,14 +104,30 @@ function Textbox(){
                 font-weight: 300;
             }
             @media (max-width: 768px) {
+                .textbox-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
                 .form-control {
                     width: 90vw;
                     margin: 0 auto;
                 }
                 .form-label {
+                    display : block;
                     text-align: center;
+                    
+                }
+                .buttons {
+                    margin: 10px auto;
+                    width: 90vw;
+                    display: block;
+                }
+                .button-group {
+                    display: block;
+                    
                 }
             }
+            
             `}
             </style>
             <h3 className="heading" >
@@ -122,10 +138,12 @@ function Textbox(){
                     <Form.Group controlId="textbox-group">
                         <Form.Label className="form-label">Enter the text below</Form.Label>
                         <Form.Control className="form-control" as="textarea" rows={12} value={text} onChange={(e)=> setText(e.target.value)} />
-                        <Button variant="outline-light" className="btn-cnt-words buttons" onClick={handleCountClick} >Count Words</Button>
-                        <Button variant="outline-light" className="btn-uppercase buttons" onClick={handleUpClick} >Convert to UPPERCASE</Button>
-                        <Button variant="outline-light" className="btn-lowercase buttons" onClick={handleLowClick} >Convert to lowercase</Button>
-                        <Button variant="outline-light" className="btn-clear buttons" onClick={handleClearClick} >Clear Text</Button>
+                        <div className="button-group">
+                            <Button variant="outline-light" className="btn-cnt-words buttons" onClick={handleCountClick} >Count Words</Button>
+                            <Button variant="outline-light" className="btn-uppercase buttons" onClick={handleUpClick} >Convert to UPPERCASE</Button>
+                            <Button variant="outline-light" className="btn-lowercase buttons" onClick={handleLowClick} >Convert to lowercase</Button>
+                            <Button variant="outline-light" className="btn-clear buttons" onClick={handleClearClick} >Clear Text</Button>
+                        </div>
                         {count >0  && (
                             <Alert variant="success" className="result-alert">
                                 <p className="p-result" >
@@ -138,7 +156,6 @@ function Textbox(){
             </div>
         </>
     );
-
 }
 
 export default Textbox;

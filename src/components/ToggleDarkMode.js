@@ -18,6 +18,7 @@ export default function ToggleDarkMode() {
         const navbarContainerStyle = document.getElementsByClassName('navbar-container')[0].style;
         const navbarCustomStyle = document.getElementsByClassName('navbar-custom')[0].style;
         const navlink = document.getElementsByClassName('nav-link');
+        const navbarTogglerStyle = document.getElementsByClassName('navbar-toggler')[0].style;
         if(isDarkMode) {
             body.remove("body-dark-mode");
             headingStyle.color = "#E7CCB1";
@@ -25,6 +26,8 @@ export default function ToggleDarkMode() {
             formControlStyle.borderColor = "#E7CCB1";
             navbarContainerStyle.backgroundColor = "#070944";
             navbarCustomStyle.color = "#E7CCB1";
+            navbarTogglerStyle.backgroundColor = "#E7CCB1";
+            
         } else {
             body.add("body-dark-mode");
             headingStyle.color = "#4F3850";
@@ -32,6 +35,7 @@ export default function ToggleDarkMode() {
             formControlStyle.borderColor = "#4F3850";
             navbarContainerStyle.backgroundColor = "#FEF5EE";
             navbarCustomStyle.color = "#4F3850";
+            navbarTogglerStyle.backgroundColor = "#E7CCB1";
         }
         for(let i=0; i<buttons.length; i++){
             if (isDarkMode) {
