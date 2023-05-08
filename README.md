@@ -6,7 +6,7 @@ This is a static website built with React, HTML, and CSS, which provides various
 Live Site
 ---------
 
-You can view the live site at <https://textutils.onrender.com/>. Feel free to try out the different text utility features and toggle between light and dark themes.
+You can view the live site at <https://textutils-react.onrender.com/>. Feel free to try out the different text utility features and toggle between light and dark themes.
 
 Note: As the site is hosted on a third-party platform, it may take some time to load initially.
 
